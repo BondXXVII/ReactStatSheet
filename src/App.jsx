@@ -26,7 +26,7 @@ class App extends React.Component {
         <div>INT: <Form key="4"></Form></div><br/>
         <div>WIS: <Form key="5"></Form></div><br/>
         <div>CHR: <Form key="6"></Form></div><br/>
-        <button onClick={this.diceRoll}>Rolllllllll(3d6)</button><br/>
+        <button onClick={this.diceRoll}>Rollllllll Em!(3d6)</button><br/>
         <div>{this.state.dice}</div><br/>
         <img className="papuh" src={image}/>
       </div>

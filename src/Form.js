@@ -14,14 +14,14 @@ class Form extends React.Component {
     this.setState({stat: statU});
   }
 
-  clearUp = () => {
-    this.setState({stat: ""});
-  }
+//   clearUp = () => {
+//     this.setState({stat: ""});
+//   }
 
   render() {
     return (
         <form className="formLine">
-          <input type="text" onClick={this.clearUp} value={this.state.stat} onChange={this.handleDaChange} /><span> {Math.floor((this.state.stat - 10) / 2)}</span>
+          <input type="number" value={this.state.stat} onChange={this.handleDaChange} /><span> {Math.floor((this.state.stat - 10) / 2)}</span>
       </form>
     );
   }
