@@ -7,7 +7,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-    dice: "7",
+    dice: "0",
     };
   }
 
