@@ -5,7 +5,7 @@ class Form extends React.Component {
   constructor() {
     super();
     this.state = {
-    stat: "",
+    stat: "10",
     };
   }
 
@@ -14,10 +14,14 @@ class Form extends React.Component {
     this.setState({stat: statU});
   }
 
+  clearUp = () => {
+    this.setState({stat: ""});
+  }
+
   render() {
     return (
         <form className="formLine">
-          <input type="text" value={this.state.stat} onChange={this.handleDaChange} /><span> {Math.floor((this.state.stat - 10) / 2)}</span>
+          <input type="text" onClick={this.clearUp} value={this.state.stat} onChange={this.handleDaChange} /><span> {Math.floor((this.state.stat - 10) / 2)}</span>
       </form>
     );
   }
