@@ -1,0 +1,62 @@
+import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+    str: "22",
+    dex: "d",
+    con: "cn",
+    int: "i",
+    wis: "W",
+    chr: "cH"
+    };
+  }
+
+  handleDaChange = (event) => {
+    const strU = event.target.value;
+    this.setState({str: strU});
+    const dexU = event.target.value;
+    this.setState({dex: dexU});
+    const conU = event.target.value;
+    this.setState({con: conU});
+    const intU = event.target.value;
+    this.setState({int: intU});
+    const wisU = event.target.value;
+    this.setState({wis: wisU});
+    const chrU = event.target.value;
+    this.setState({chr: chrU});
+  }
+
+  handleDaSubmit = (event) => {
+    alert('A name was submitted: ' );
+  }
+
+  calcMods = () => {
+    let charisma = document.getElementById("chr").value
+    let chr_mod = Math.floor((charisma - 10) / 2)
+    document.getElementById("chr_modifier").innerHTML = chr_mod;
+  }
+
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleDaSubmit}>
+        <label>STR: <input type="text" value={this.state.str} onChange={this.handleDaChange} /></label><span>{this.state.str / 2}</span> <br></br>
+        <label>DEX: <input type="text" value={this.state.dex} onChange={this.handleDaChange} /></label><span>{this.state.dex / 2}</span> <br></br>
+        <label>CON: <input type="text" value={this.state.con} onChange={this.handleDaChange} /></label><span>{this.state.con / 2}</span> <br></br>
+        <label>INT: <input type="text" value={this.state.int} onChange={this.handleDaChange} /></label><span>{this.state.int / 2}</span> <br></br>
+        <label>WIS: <input type="text" value={this.state.wis} onChange={this.handleDaChange} /></label><span>{this.state.wis / 2}</span> <br></br>
+        <label>CHR: <input type="text" value={this.state.chr} onChange={this.handleDaChange} /></label><span>{this.state.chr / 2}</span> <br></br><br></br>
+
+        <input type="submit" value="Submit" />
+      </form>
+      <div>{this.state.str + this.state.dex}</div>
+      </div>
+    );
+  }
+}
+
+export default App;
