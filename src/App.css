@@ -1,4 +1,4 @@
-.formLine{display: inline;}
+.formLine{float: right;}
 html{
   background-image: url(http://img1.joyreactor.com/pics/post/full/art-scenery-gif-waterfall-3368027.gif);
   background-repeat: no-repeat;
@@ -10,7 +10,8 @@ html{
   margin-left: -3em;
   margin-top: -25em;
 }
-.idk {
+.allTheStuff {
   margin-left: 20em;
   margin-top: 14em;
+  width: 14.5em;
 }

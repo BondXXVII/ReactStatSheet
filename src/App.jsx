@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Form from './Form';
-import image from './images/scroll.png';
+import Paperrr from './images/scroll.png';
 
 class App extends React.Component {
   constructor() {
@@ -17,18 +17,21 @@ class App extends React.Component {
   }
 
   render() {
+    let statName = ["STR: ", "DEX: ", "CON: ", "INT: ", "WIS: ", "CHR: "];
+    let forms = []
+    for (const stat in statName){
+     forms.push(<div key={stat}><div>{statName[stat]}<Form key={"F"+stat}/></div><br/></div>)
+    }
     return (
-      <div className="idk">
+      <div className="allTheStuff">
         <h1>PathFinder Stats</h1>
-        <div>STR: <Form key="1"></Form></div><br/>
-        <div>DEX: <Form key="2"></Form></div><br/>
-        <div>CON: <Form key="3"></Form></div><br/>
-        <div>INT: <Form key="4"></Form></div><br/>
-        <div>WIS: <Form key="5"></Form></div><br/>
-        <div>CHR: <Form key="6"></Form></div><br/>
-        <button onClick={this.diceRoll}>Rollllllll Em!(3d6)</button><br/>
-        <div>{this.state.dice}</div><br/>
-        <img className="papuh" src={image}/>
+
+        {forms}
+
+        <button onClick={this.diceRoll}>Rollllllll Em!(3d6)</button>
+        <div>{this.state.dice}</div>
+
+        <img className="papuh" src={Paperrr} alt="" />
       </div>
     );
   }
